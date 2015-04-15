@@ -79,7 +79,7 @@ multiply(4, 3, function(answer){
 var contains = function(arr1, x, cb){
   for (var i=0; i < arr1.lenght; i++){
     if(x === arr1[i]){
-      cb(true)
+     return cb(true)
     }
   }cb(false);
 };
@@ -126,7 +126,11 @@ uniq(names, function(uniqArr){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-
+var each = function(arr1, cb){
+  for (var i = 0; i < arr1.length; i++){
+    cb(arr1[i],i);
+  }
+};
 
     //Code Here for each
 
@@ -171,3 +175,26 @@ var users = [
 getUserById(users, '16t', function(user){
   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
 });
+
+var getUserById = function(nui, x, cb){
+  for (var i = 0; i < nui.length; i++){
+    if(nui[i].id === x);
+    cb(nui[i].email, nui[i].name);
+    
+  }
+};
+
+var getUserById = function(users){
+  for (var i = 0; i < users.length; i++){
+    if(users[i].id === '16t');
+    alert(users[i].email, users[i].name);
+    
+  }
+};
+var test = function(){
+  for ( var i=0; i < users.length; i++){
+    alert(users[i]);
+  }
+};
+  }
+}
