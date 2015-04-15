@@ -22,7 +22,9 @@ and what you should write is the favNum function that makes the code above work,
     
 */
 
-
+var first = function ((r, cb){
+ cb(r[0]));
+};
 
   //Code Here for first
   
@@ -38,7 +40,9 @@ first(names, function(firstName){
 
 
 
-  //Code Here for last
+var last = function (x, cb){
+  cb(x[x.length -1]);
+};
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
@@ -55,7 +59,9 @@ last(names, function(lastName){
 
 
 
-
+var multiply = function (num1, num2, cb){
+  cb(num1 * num2);
+};
   //Code Here for multiply
 
 multiply(4, 3, function(answer){
@@ -70,7 +76,13 @@ multiply(4, 3, function(answer){
 
 
 
-
+var contains = function(arr1, x, cb){
+  for (var i=0; i < arr1.lenght; i++){
+    if(x === arr1[i]){
+      cb(true)
+    }
+  }cb(false);
+};
 
   //Code Here for contains
 
@@ -92,7 +104,15 @@ contains(names, 'Colt', function(result){
 
 
 
-    //Code Here for uniq
+var uniq =  function (arr1, cb){
+  for (var i=0; i < arr1.length; i++){
+    for (var j=i+1; j < arr1.length; i++){
+        if (arr1[j] === arr1[i]){
+      arr1.splice (j, 1);
+      j--
+    }
+  }cb(arr1);
+};
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
