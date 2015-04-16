@@ -178,8 +178,8 @@ getUserById(users, '16t', function(user){
 
 var getUserById = function(nui, x, cb){
   for (var i = 0; i < nui.length; i++){
-    if(nui[i].id === x);
-    cb(nui[i].email, nui[i].name);
+    if(nui[i].id === x){
+    cb(nui[i]);
     
   }
 };
